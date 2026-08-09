@@ -1,0 +1,18 @@
+mcs.metadata:
+  componentName: AG Dealer Master Data
+  description: |-
+    Cadastro dos concessionários que estão com e-commerce ativo. Traz, por
+    concessionário: código GDD, CBU, marca e razão social.
+    USE QUANDO: precisar identificar um concessionário ou seus códigos — por
+    exemplo "qual o GDD da concessionária X", "quais dealers da marca NHAG têm
+    e-commerce ativo", "a que CBU pertence o dealer Y" — ou quando precisar
+    converter o nome de um concessionário no código dele para usar em outra consulta.
+    NÃO USE PARA: faturamento, metas ou cupons. Metas e cupons estão em
+    "projeto_ag_2026.xlsx"; faturamento vem da ação do Power BI.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: AGDealerMasterData_wspEOFN1En8rodWlgmMZF

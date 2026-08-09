@@ -1,0 +1,48 @@
+mcs.metadata:
+  componentName: Se houver erro
+  description: Esse tópico do sistema é desencadeado quando o agente encontra um erro. Ao usar o painel de chat de teste, a descrição completa do erro é exibida.
+kind: AdaptiveDialog
+startBehavior: UseLatestPublishedContentAndCancelOtherTopics
+beginDialog:
+  kind: OnError
+  id: main
+  actions:
+    - kind: SetVariable
+      id: setVariable_timestamp
+      variable: init:Topic.CurrentTime
+      value: =Text(Now(), DateTimeFormat.UTC)
+
+    - kind: ConditionGroup
+      id: condition_1
+      conditions:
+        - id: bL4wmY
+          condition: =System.Conversation.InTestMode = true
+          actions:
+            - kind: SendActivity
+              id: sendMessage_XJBYMo
+              activity: |-
+                Mensagem de Erro: {System.Error.Message}
+                Código do Erro: {System.Error.Code}
+                ID da Conversa: {System.Conversation.Id}
+                Horário (UTC): {Topic.CurrentTime}
+
+      elseActions:
+        - kind: SendActivity
+          id: sendMessage_dZ0gaF
+          activity:
+            text:
+              - |-
+                Ocorreu um erro.
+                Código do erro: {System.Error.Code}
+                ID da Conversa: {System.Conversation.Id}
+                Horário (UTC): {Topic.CurrentTime}.
+            speak:
+              - Ocorreu um erro. Tente novamente.
+
+    - kind: LogCustomTelemetryEvent
+      id: 9KwEAn
+      eventName: OnErrorLog
+      properties: "={ErrorMessage: System.Error.Message, ErrorCode: System.Error.Code, TimeUTC: Topic.CurrentTime, ConversationId: System.Conversation.Id}"
+
+    - kind: CancelAllDialogs
+      id: NW7NyY

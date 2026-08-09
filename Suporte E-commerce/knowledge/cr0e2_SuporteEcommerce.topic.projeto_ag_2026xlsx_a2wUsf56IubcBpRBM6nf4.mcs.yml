@@ -1,0 +1,20 @@
+mcs.metadata:
+  componentName: projeto_ag_2026.xlsx
+  description: |-
+    Metas dos concessionários e cupons das ações comerciais de 2026. Também
+    chamada de projetoag2026, projeto ag 26 ou projeto AG.
+    USE QUANDO: perguntarem sobre meta de concessionária, sobre qual cupom
+    pertence a qual dealer, ou quais concessionários participam de uma ação
+    comercial — por exemplo "qual a meta da concessionária X", "qual o cupom do
+    dealer Y", "quem está participando do projeto AG 2026", "cupons da ação".
+    NÃO USE PARA: o faturamento realizado desses cupons, que vem da ação do
+    Power BI. Esta fonte tem a meta e o cadastro do cupom, não o resultado.
+    Para dados cadastrais da concessionária use "AG Dealer Master Data".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  triggerCondition: true
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: projeto_ag_2026xlsx_M9RqOxS6eE6dHhIRZoB2v

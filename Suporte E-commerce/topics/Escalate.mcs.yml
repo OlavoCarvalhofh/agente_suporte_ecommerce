@@ -1,0 +1,76 @@
+mcs.metadata:
+  componentName: Escalonar
+  description: |-
+    Esse tópico do sistema é disparado quando o usuário indica que gostaria de conversar com um represente.
+    Você pode configurar como o agente tratará os cenários de entrega humana nas configurações do agente.
+    Se o agente não tratar escalonamentos, esse tópico deverá ser desabilitado.
+kind: AdaptiveDialog
+startBehavior: CancelOtherTopics
+beginDialog:
+  kind: OnEscalate
+  id: main
+  intent:
+    displayName: Escalonar
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - Falar com agente
+      - Conversar com agente
+      - Falar com uma pessoa
+      - Conversar com uma pessoa
+      - Falar com alguém
+      - Conversar com alguém
+      - Retornar chamada
+      - Ligar de volta
+      - Ligar para o SAC
+      - Ligue para mim, por favor
+      - Me ligue, por favor
+      - Liguem para mim, por favor
+      - Me liguem, por favor
+      - Ligar para o suporte
+      - Ligar para o suporte técnico
+      - Um agente pode ligar para mim?
+      - Um agente pode me ligar?
+      - Posso ligar?
+      - Posso falar com outra pessoa?
+      - Posso ter suporte de um agente real?
+      - Você pode me transferir para falar com uma pessoa?
+      - Você pode me informar um número ou ligar para mim?
+      - Você pode me informar um número ou me ligar?
+      - Um representante pode ligar para mim?
+      - Um representante pode me ligar?
+      - Posso agendar uma chamada?
+      - Posso falar com um representante?
+      - Posso falar com uma pessoa?
+      - Posso falar com um assistente humano?
+      - Alguém pode ligar para mim?
+      - Alguém pode me ligar?
+      - Conversar com um representante
+      - Conversar com alguém, por favor
+      - Conectar-me com um agente humano
+      - Conectar-me com uma pessoa
+      - Alguém pode me contatar por telefone?
+      - Agente do cliente
+      - Representante do cliente
+      - SAC
+      - Preciso que um gerente me contate
+      - Preciso que um gerente entre em contato comigo
+      - Preciso do SAC
+      - Preciso de ajuda de uma pessoa
+      - Preciso falar com um agente humano
+      - Preciso falar com um especialista
+      - Quero falar com o SAC
+      - Quero continuar com o suporte ao vivo
+      - Quero falar com um consultor
+      - Quero falar com um técnico
+      - Gostaria de falar com um representante
+      - Gostaria de falar com um técnico
+      - Falar com membro do suporte técnico
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_s39DCt
+      conversationOutcome: Escalated
+      activity: |-
+        O escalonamento para um representante não está configurado para este copiloto no momento. No entanto, é nesse momento que o agente pode fornecer informações sobre como entrar em contato com alguém de outra forma.
+
+        Posso ajudar em algo mais?

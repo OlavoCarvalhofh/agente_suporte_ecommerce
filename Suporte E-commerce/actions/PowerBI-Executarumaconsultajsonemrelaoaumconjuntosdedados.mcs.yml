@@ -1,0 +1,52 @@
+mcs.metadata:
+  componentName: Power BI - Executar uma consulta json em relação a um conjuntos de dados
+kind: TaskDialog
+response:
+  activity:
+  mode: Generated
+
+inputs:
+  - kind: ManualTaskInput
+    propertyName: groupid
+    value: 4894d760-6c40-4766-abc7-726997420131
+
+  - kind: ManualTaskInput
+    propertyName: datasetid
+    value: be8cd1ce-6c02-4765-a239-141f2b0c064d
+
+  - kind: AutomaticTaskInput
+    propertyName: query
+    description: |-
+      Consulta DAX no semantic model de vendas do e-commerce. Monte a partir da
+      pergunta do usuário; não reaproveite os valores do exemplo.
+
+      Campos: 'AG Dealer Master Data'[field_1] marca (NHAG, CSIH), [field_2] razão
+      social, [gdd], [CBU]; 'Cupons _ todos'[NOME CUPOM]; 'dm_calendario'[Mes] (mês
+      por extenso, minúsculo: "junho"); '_Medidas'[Faturamento do Cupom].
+
+      Regras: comece com EVALUATE; agrupe com SUMMARIZECOLUMNS e filtre com TREATAS;
+      filtre apenas por período, marca, cupom ou concessionário que o usuário citou;
+      limite com TOPN(1001, ...); use só os campos acima — se faltar algum, informe
+      que o dado não está disponível em vez de inventar o nome.
+
+      Estrutura: EVALUATE TOPN(1001, SUMMARIZECOLUMNS('AG Dealer Master Data'[field_2],
+      TREATAS({"junho"}, 'dm_calendario'[Mes]), "Faturamento",
+      '_Medidas'[Faturamento do Cupom]))
+
+modelDisplayName: Consultar faturamento e vendas no Power BI
+modelDescription: |-
+  Executa uma consulta DAX no semantic model de vendas do e-commerce e devolve os
+  números oficiais. Use quando perguntarem sobre faturamento, faturamento de cupom,
+  desempenho de ação comercial, ou vendas por concessionário, marca, CBU ou período.
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cr0e2_SuporteEcommerce.shared_powerbi.shared-powerbi-22330c16-61d5-4732-8307-fe550d0d64cb
+  connectionProperties:
+    mode: Maker
+
+  operationId: ExecuteDatasetQuery
+
+outputMode: All

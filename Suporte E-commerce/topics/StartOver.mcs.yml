@@ -1,0 +1,38 @@
+mcs.metadata:
+  componentName: Recomeçar
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Recomeçar
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - vamos começar novamente
+      - vamos começar de novo
+      - recomeçar
+      - começar novamente
+      - reiniciar
+
+  actions:
+    - kind: Question
+      id: question_zguoVV
+      alwaysPrompt: false
+      variable: init:Topic.Confirm
+      prompt: Tem certeza de que deseja reiniciar a conversa?
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: conditionGroup_lvx2zV
+      conditions:
+        - id: conditionItem_sVQtHa
+          condition: =Topic.Confirm = true
+          actions:
+            - kind: BeginDialog
+              id: 0YKYsy
+              dialog: cr0e2_SuporteEcommerce.topic.ResetConversation
+
+      elseActions:
+        - kind: SendActivity
+          id: sendMessage_lk2CyQ
+          activity: OK. Vamos continuar.

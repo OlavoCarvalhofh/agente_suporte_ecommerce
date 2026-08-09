@@ -1,0 +1,19 @@
+mcs.metadata:
+  componentName: Listas PVP
+  description: |-
+    Essa pasta possui todos o cadastrado de peças "produtos", aqui teremos informações de
+    "Part Number", "Valor da PVP", seria o preço praticado e o nome do arquivo o mês vigente
+    USE QUANDO: perguntarem o preço de uma peça — por exemplo "valor do preço do
+    item xxx em junho", "preço do part number xxx", "qual a PVP da peça xxx",
+    "lista PVP de julho".
+    NÃO USE PARA: faturamento, metas ou cupons. Metas e cupons estão em
+    "projeto_ag_2026.xlsx"; faturamento vem da ação do Power BI. Também não serve
+    como guia de ajuda ou de processos do e-commerce, que estão em "Guias 2026",
+    nem para configurar preço, que é procedimento e também está em "Guias 2026".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: ListasPVP_bs2oPZSAp3aaE3Li7Y5Iv

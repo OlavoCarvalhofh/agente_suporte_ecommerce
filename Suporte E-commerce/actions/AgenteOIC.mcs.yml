@@ -1,0 +1,21 @@
+mcs.metadata:
+  componentName: Agente OIC
+kind: TaskDialog
+modelDescription: |-
+  #toda vez que perguntar alguma informação da OIC, voê pode consultar esses dados para responder
+  -Atendimentos
+  -quantidade de atendimento da OIC
+  -Atendimento SAP feito pela OIC
+  -Potencial de vendas carrinho criado pela OIC
+outputs:
+  - propertyName: response
+
+action:
+  kind: InvokeFlowTaskAction
+  flowId: 9d8b21ec-1e88-f111-ab10-0022489e7585
+  connectionProperties:
+    $kind: ConnectionProperties
+    diagnostics:
+    mode: Maker
+
+outputMode: All

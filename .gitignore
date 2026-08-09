@@ -1,0 +1,13 @@
+# Plugin skills-for-copilot-studio — código de terceiro (Microsoft), 5.9 MB.
+# Instalado separadamente como plugin do Claude Code, não faz parte deste projeto.
+skills-for-copilot-studio-main/
+
+# Estado de sincronização local do Copilot Studio.
+# A pasta .mcs/ já traz o próprio .gitignore com "*" (padrão do produto):
+# conn.json é específico da máquina e changetoken.txt muda a cada sync,
+# então versionar geraria conflito a cada pull/push.
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

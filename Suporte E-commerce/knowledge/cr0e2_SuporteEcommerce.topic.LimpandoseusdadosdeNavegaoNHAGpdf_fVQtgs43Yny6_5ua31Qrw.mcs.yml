@@ -1,0 +1,19 @@
+mcs.metadata:
+  componentName: Limpando seus dados de Navegação - NHAG.pdf
+  description: |-
+    Procedimento de limpeza de cookies e cache do navegador para a marca NHAG,
+    quando o usuário não consegue conectar ao e-commerce.
+    USE QUANDO: relatarem erro de login, tela travada, página que não carrega ou
+    acesso negado no e-commerce da marca NHAG — por exemplo "não consigo entrar
+    no NHAG", "limpar cache NHAG", "dealer NHAG não consegue logar".
+    NÃO USE PARA: o mesmo problema na marca CSIH, também escrita CSAG, que tem
+    guia próprio em "Limpando seus dados de Navegação - CSIH.pdf". Também não
+    serve para procedimentos de estoque, preço ou pedidos, que estão em
+    "Guias 2026".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: LimpandoseusdadosdeNavegaoNHAGpdf_TNXpFq9oRol22xt0kki0i

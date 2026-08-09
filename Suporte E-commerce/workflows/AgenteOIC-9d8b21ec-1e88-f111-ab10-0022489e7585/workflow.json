@@ -1,0 +1,134 @@
+﻿{
+  "properties": {
+    "connectionReferences": {
+      "shared_powerbi": {
+        "api": {
+          "name": "shared_powerbi"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedpowerbi_51322"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_commondataserviceforapps": {
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcommondataserviceforapps_7c8cb"
+        },
+        "runtimeSource": "embedded"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {},
+              "required": []
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "b8f61c18-7224-4f8a-9c5f-72fbce5df764"
+          }
+        }
+      },
+      "actions": {
+        "Executar_uma_consulta_em_um_conjuntos_de_dados": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "groupid": "4894d760-6c40-4766-abc7-726997420131",
+              "datasetid": "2251906a-6a46-42db-87da-a28519b9677a",
+              "specification/query": "DEFINE\n\tVAR __DS0FilterTable = \n\t\tFILTER(\n\t\t\tKEEPFILTERS(VALUES(\u0027Date\u0027[Date])),\n\t\t\tAND(\u0027Date\u0027[Date] \u003E= DATE(2025, 1, 1), \u0027Date\u0027[Date] \u003C= TODAY())\n\t\t)\n\tVAR __DS0Core = \n\t\tCALCULATETABLE(\n\t\t\tSUMMARIZE(\n\t\t\t\t\u0027OIC\u0027,\n\t\t\t\t\u0027OIC\u0027[address1_stateorprovince],\n\t\t\t\t\u0027OIC\u0027[caseorigincodename],\n\t\t\t\t\u0027OIC\u0027[CidadeDealer],\n\t\t\t\t\u0027OIC\u0027[cnhi_businessunitidname],\n\t\t\t\t\u0027OIC\u0027[cnhi_causalsecondaryname],\n\t\t\t\t\u0027OIC\u0027[cnhi_justificativacriticidade],\n\t\t\t\t\u0027OIC\u0027[createdon],\n\t\t\t\t\u0027OIC\u0027[Dealer],\n\t\t\t\t\u0027OIC\u0027[description],\n\t\t\t\t\u0027OIC\u0027[owneridname],\n\t\t\t\t\u0027OIC\u0027[primarycontactidname],\n\t\t\t\t\u0027OIC\u0027[ticketnumber]\n\t\t\t),\n\t\t\tKEEPFILTERS(__DS0FilterTable)\n\t\t)\n\tVAR __DS0PrimaryWindowed = \n\t\tTOPN(\n\t\t\t501,\n\t\t\t__DS0Core,\n\t\t\t\u0027OIC\u0027[description],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[address1_stateorprovince],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[caseorigincodename],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[CidadeDealer],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[cnhi_businessunitidname],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[cnhi_causalsecondaryname],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[cnhi_justificativacriticidade],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[createdon],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[Dealer],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[owneridname],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[primarycontactidname],\n\t\t\t1,\n\t\t\t\u0027OIC\u0027[ticketnumber],\n\t\t\t1\n\t\t)\nEVALUATE\n\t__DS0PrimaryWindowed\nORDER BY\n\t\u0027OIC\u0027[description],\n\t\u0027OIC\u0027[address1_stateorprovince],\n\t\u0027OIC\u0027[caseorigincodename],\n\t\u0027OIC\u0027[CidadeDealer],\n\t\u0027OIC\u0027[cnhi_businessunitidname],\n\t\u0027OIC\u0027[cnhi_causalsecondaryname],\n\t\u0027OIC\u0027[cnhi_justificativacriticidade],\n\t\u0027OIC\u0027[createdon],\n\t\u0027OIC\u0027[Dealer],\n\t\u0027OIC\u0027[owneridname],\n\t\u0027OIC\u0027[primarycontactidname],\n\t\u0027OIC\u0027[ticketnumber]",
+              "specification/serializerSettings/includeNulls": false
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_powerbi",
+              "operationId": "ExecuteDatasetQuery",
+              "connectionName": "shared_powerbi"
+            }
+          },
+          "runAfter": {}
+        },
+        "Respond_to_the_agent": {
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "response": {
+                  "title": "response",
+                  "description": "",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "response": "@{outputs(\u0027Executar_uma_solicita\u00E7\u00E3o\u0027)?[\u0027body/responsev2/predictionOutput/text\u0027]}"
+            }
+          },
+          "runAfter": {
+            "Executar_uma_solicita\u00E7\u00E3o": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "81c94f73-dd52-465c-ad3b-a4686da63cc3"
+          }
+        },
+        "Compor": {
+          "type": "Compose",
+          "inputs": "@outputs(\u0027Executar_uma_consulta_em_um_conjuntos_de_dados\u0027)?[\u0027body/firstTableRows\u0027]",
+          "runAfter": {
+            "Executar_uma_consulta_em_um_conjuntos_de_dados": [
+              "Succeeded"
+            ]
+          }
+        },
+        "Executar_uma_solicita\u00E7\u00E3o": {
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "recordId": "59d1dd9f-ad68-4e51-8cae-ffe890ee1d0a",
+              "item/requestv2/JSON": "@outputs(\u0027Compor\u0027)"
+            },
+            "host": {
+              "apiId": "providers/Microsoft.ProcessSimple/operationGroups/aibuilder",
+              "operationId": "aibuilderpredict_customprompt",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          },
+          "runAfter": {
+            "Compor": [
+              "Succeeded"
+            ]
+          }
+        }
+      },
+      "outputs": {}
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

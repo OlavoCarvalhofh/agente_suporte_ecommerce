@@ -1,0 +1,28 @@
+mcs.metadata:
+  componentName: Saudação
+  description: Esse tópico é disparado quando o usuário cumprimenta o agente.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Saudação
+    includeInOnSelectIntent: false
+    triggerQueries:
+      - Boa tarde
+      - Bom dia
+      - Olá
+      - Ei
+      - Oi
+
+  actions:
+    - kind: SendActivity
+      id: sendMessage_abmysR
+      activity:
+        text:
+          - Olá, como posso ajudar hoje?
+        speak:
+          - Olá, <break strength="medium" />. Como posso ajudar?
+
+    - kind: CancelAllDialogs
+      id: cancelAllDialogs_01At22

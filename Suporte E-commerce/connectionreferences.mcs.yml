@@ -1,0 +1,9 @@
+﻿connectionReferences:
+  - connectionReferenceLogicalName: cr0e2_SuporteEcommerce.shared_a365copilotchatmcp.shared-a365copilotch-0d28c5fa-de9b-47bd-a2e3-46d7053986a2
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_a365copilotchatmcp
+  - connectionReferenceLogicalName: cr0e2_SuporteEcommerce.shared_powerbi.shared-powerbi-22330c16-61d5-4732-8307-fe550d0d64cb
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_powerbi
+  - connectionReferenceLogicalName: new_sharedcommondataserviceforapps_7c8cb
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps
+  - connectionReferenceLogicalName: new_sharedpowerbi_51322
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_powerbi

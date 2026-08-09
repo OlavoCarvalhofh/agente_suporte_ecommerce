@@ -1,0 +1,15 @@
+mcs.metadata:
+  componentName: Início da conversa
+  description: Esse tópico do sistema é disparado quando o agente recebe uma Atividade que indica o início de uma nova conversa. Se você não quiser que o agente inicie a conversa, desabilite esse tópico.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Olá, eu sou o(a) {System.Bot.Name}. Como posso ajudar?
+        speak:
+          - Olá, e obrigado por ligar para o {System.Bot.Name}. Observe que algumas respostas são geradas por IA e pode ser necessário verificar sua exatidão. Como posso ajudar você hoje?

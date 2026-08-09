@@ -1,0 +1,36 @@
+displayName: Suporte E-commerce
+schemaName: cr0e2_SuporteEcommerce
+accessControlPolicy: GroupMembership
+authenticationMode: Integrated
+authenticationTrigger: Always
+configuration:
+  channels:
+    - channelId: MsTeams
+
+    - channelId: Microsoft365Copilot
+
+  settings:
+    GenerativeActionsEnabled: true
+
+  isAgentConnectable: true
+  publishOnCreate: false
+  publishOnImport: true
+  gPTSettings:
+    defaultSchemaName: cr0e2_SuporteEcommerce.gpt.default
+
+  isLightweightBot: false
+  aISettings:
+    useModelKnowledge: false
+    isFileAnalysisEnabled: true
+    isSemanticSearchEnabled: true
+    contentModeration: Low
+    optInUseLatestModels: false
+
+  recognizer:
+    kind: GenerativeAIRecognizer
+
+publishedOn: 2026-07-14T00:14:01.0000000Z
+template: default-2.1.0
+language: 1046
+supportedLanguages:
+  - 2057

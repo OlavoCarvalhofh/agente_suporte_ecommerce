@@ -1,0 +1,33 @@
+﻿jsonFileName: workflows/AgenteOIC-9d8b21ec-1e88-f111-ab10-0022489e7585/workflow.json
+workflowId: 9d8b21ec-1e88-f111-ab10-0022489e7585
+name: Agente OIC
+type: 1
+description: Essa tool consulta o relatório Power BI vinculado ao power platatform e busca os atendimentos do time de call center da OIC
+subprocess: false
+category: 5
+mode: 0
+scope: 4
+onDemand: false
+triggerOnCreate: false
+triggerOnDelete: false
+asyncAutodelete: false
+syncWorkflowLogOnFailure: false
+stateCode: 1
+statusCode: 2
+runAs: 1
+isTransacted: true
+introducedVersion: 1.0
+isCustomizable:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: iscustomizableanddeletable
+businessProcessType: 0
+isCustomProcessingStepAllowedForOtherPublishers:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: canbedeleted
+modernFlowType: 1
+primaryEntity: none
+connectionReferences:
+- new_sharedpowerbi_51322
+- new_sharedcommondataserviceforapps_7c8cb

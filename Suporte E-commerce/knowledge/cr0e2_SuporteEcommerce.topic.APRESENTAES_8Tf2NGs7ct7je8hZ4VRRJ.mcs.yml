@@ -1,0 +1,15 @@
+mcs.metadata:
+  componentName: APRESENTAÇÕES
+  description: |-
+    Apresentações e slides criados pelo time do e-commerce, para uso interno e
+    externo. Fica na pasta APRESENTAÇÕES do Planejamento 26.
+    USE QUANDO: pedirem uma apresentação, slide ou deck — por exemplo
+    "overview do e-commerce de junho", "overview mensal para a liderança",
+    "apresentação do time comercial", "análise de mercado de drone",
+    "tem o deck da reunião com a rede".
+    NÃO USE PARA: procedimentos operacionais. Se a pergunta é como executar algo
+    no e-commerce, use os documentos "Passo a Passo" correspondentes, não um slide.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://cnhind.sharepoint.com/sites/E-comAGJanaJun/Shared%20Documents/arquivos_ecom_ag_br/00%20-%20Planejamento/Planejamento%2026/APRESENTAÇÕES

@@ -1,0 +1,80 @@
+mcs.metadata:
+  componentName: Fim da conversa
+  description: |-
+    Esse tópico do sistema é disparado apenas por uma ação de redirecionamento,
+    e guia o usuário para classificar a conversa com o agente.
+kind: AdaptiveDialog
+startBehavior: CancelOtherTopics
+beginDialog:
+  kind: OnSystemRedirect
+  id: main
+  actions:
+    - kind: Question
+      id: 41d42054-d4cb-4e90-b922-2b16b37fe379
+      conversationOutcome: ResolvedImplied
+      alwaysPrompt: true
+      variable: init:Topic.SurveyResponse
+      prompt: Isso esclareceu sua dúvida?
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: condition-0
+      conditions:
+        - id: condition-0-item-0
+          condition: =Topic.SurveyResponse = true
+          actions:
+            - kind: CSATQuestion
+              id: csat_1
+              conversationOutcome: ResolvedConfirmed
+
+            - kind: SendActivity
+              id: sendMessage_8r29O0
+              activity: Obrigado por seus comentários.
+
+            - kind: Question
+              id: question_1
+              alwaysPrompt: true
+              variable: init:Topic.Continue
+              prompt: Posso ajudar com algo mais?
+              entity: BooleanPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: condition-1
+              conditions:
+                - id: condition-1-item-0
+                  condition: =Topic.Continue = true
+                  actions:
+                    - kind: SendActivity
+                      id: sendMessage_4eOE6h
+                      activity: Pode falar. Estou escutando.
+
+              elseActions:
+                - kind: SendActivity
+                  id: yHBz55
+                  activity: OK. Até logo.
+
+                - kind: EndConversation
+                  id: jh1GMT
+
+      elseActions:
+        - kind: Question
+          id: PM68ot
+          alwaysPrompt: true
+          variable: init:Topic.TryAgain
+          prompt: Desculpe, não posso ajudar melhor do que isso. Gostaria de tentar novamente?
+          entity: BooleanPrebuiltEntity
+
+        - kind: ConditionGroup
+          id: KNxYBf
+          conditions:
+            - id: DPveFP
+              condition: =Topic.TryAgain = false
+              actions:
+                - kind: BeginDialog
+                  id: cngqi4
+                  dialog: cr0e2_SuporteEcommerce.topic.Escalate
+
+          elseActions:
+            - kind: SendActivity
+              id: GrVHEW
+              activity: Pode falar. Estou escutando.

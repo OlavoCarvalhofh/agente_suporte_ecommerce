@@ -1,0 +1,27 @@
+mcs.metadata:
+  componentName: Guias 2026
+  description: |-
+    Fonte principal de procedimentos e processos de trabalho do e-commerce. Reúne
+    todos os guias de "como fazer", incluindo os passo a passo em PDF.
+    USE QUANDO: perguntarem como executar qualquer tarefa no e-commerce. Temas
+    cobertos: pedidos (consultar andamento, cancelar, exportar dados); estoque
+    (atualizar no SAP BackOffice, protocolo de integração do DMS); preços
+    (configurar seus preços); carrinho via Excel; cotações, tanto a normal quanto
+    a da ação AGRISHOW 2026; cadastro de vendedores; gestão de locais de retirada;
+    conectar no Azure Storage Explorer; Pagarme.
+    Exemplos: "como cancelo um pedido", "como lanço estoque", "como faço cotação
+    para a Agrishow", "como personalizar um preço", "guia do Pagarme",
+    "como exportar dados de pedidos", "como cadastrar vendedor".
+    NÃO USE PARA: apresentações e slides, que estão em "APRESENTAÇÕES"; preço de
+    um item ou part number específico, que está em "Listas PVP"; dados cadastrais
+    de concessionária, que estão em "AG Dealer Master Data"; metas e cupons, que
+    estão em "projeto_ag_2026.xlsx"; faturamento, que vem da ação do Power BI;
+    e problemas de login ou cookies, que estão nos guias "Limpando seus dados de
+    Navegação" da marca correspondente.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: Guias2026_wlE5UcaQI3DViTUtn3JYz

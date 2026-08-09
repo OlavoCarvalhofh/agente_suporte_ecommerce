@@ -1,0 +1,22 @@
+mcs.metadata:
+  componentName: Fallback
+  description: Esse tópico do sistema é disparado quando o enunciado do usuário não corresponde aos tópicos existentes.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: conditionGroup_LktzXw
+      conditions:
+        - id: conditionItem_tlGIVo
+          condition: =System.FallbackCount < 3
+          actions:
+            - kind: SendActivity
+              id: sendMessage_QZreqo
+              activity: Não sei como ajudar. Você pode tentar reformular a pergunta?
+
+      elseActions:
+        - kind: BeginDialog
+          id: 5aXj5M
+          dialog: cr0e2_SuporteEcommerce.topic.Escalate

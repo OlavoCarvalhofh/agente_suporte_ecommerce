@@ -1,0 +1,18 @@
+mcs.metadata:
+  componentName: Planilha Controle de brindes.xlsx
+  description: |-
+    Controle de estoque dos brindes disponíveis no momento para as ações do
+    e-commerce.
+    USE QUANDO: perguntarem sobre brindes — por exemplo "quais brindes temos
+    disponíveis", "quantos brindes sobraram", "tem brinde para a ação X",
+    "estoque de brindes".
+    NÃO USE PARA: estoque de peças e produtos do e-commerce, nem procedimento de
+    atualização de estoque, que está em "Guias 2026". Preço de peça está em
+    "Listas PVP".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: PlanilhaControledebrindesxlsx_dIroceVO01epgQ_93_a2p

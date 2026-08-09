@@ -1,0 +1,22 @@
+mcs.metadata:
+  componentName: "Entrar "
+  description: Esse tópico do sistema é disparado quando o agente precisa conectar o usuário ou exige que o usuário se conecte
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnSignIn
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: conditionGroup_ypjGKL
+      conditions:
+        - id: conditionItem_7XYIIR
+          condition: =System.SignInReason = SignInReason.SignInRequired
+          actions:
+            - kind: SendActivity
+              id: sendMessage_1jHUNO
+              activity: Olá! Para poder ajudar você, será necessário que você se conecte.
+
+    - kind: OAuthInput
+      id: gOjhZA
+      title: Logon
+      text: Para continuar, faça logon

@@ -1,0 +1,19 @@
+mcs.metadata:
+  componentName: Páginas Personalizadas
+  description: |-
+    São páginas com peças e valores personalizado das concessionárias, consta o nome da concessionárias,
+    o "link da página"
+    USE QUANDO: perguntarem "quais páginas personalizadas temos hoje",
+    "páginas personalizadas CSAG ou NHAG", "página personalizada CSIH",
+    "quais concessionárias possuem página personalizada", "qual o link da página
+    da concessionária X".
+    NÃO USE PARA: faturamento, metas ou cupons. Metas e cupons estão em
+    "projeto_ag_2026.xlsx"; faturamento vem da ação do Power BI. Para dados
+    cadastrais da concessionária use "AG Dealer Master Data".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: PginasPersonalizadas_Gy41qw4a8AseGQUbUzodD

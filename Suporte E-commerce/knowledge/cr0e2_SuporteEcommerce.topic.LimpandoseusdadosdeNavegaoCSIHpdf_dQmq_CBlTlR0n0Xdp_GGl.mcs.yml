@@ -1,0 +1,18 @@
+mcs.metadata:
+  componentName: Limpando seus dados de Navegação - CSIH.pdf
+  description: |-
+    Procedimento de limpeza de cookies e cache do navegador para a marca CSIH,
+    também escrita CSAG, quando o usuário não consegue conectar ao e-commerce.
+    USE QUANDO: relatarem erro de login, tela travada, página que não carrega ou
+    acesso negado no e-commerce da marca CSIH — por exemplo "não consigo entrar
+    no CSIH", "limpar cache CSIH", "dealer CSAG não consegue logar".
+    NÃO USE PARA: o mesmo problema na marca NHAG, que tem guia próprio em
+    "Limpando seus dados de Navegação - NHAG.pdf". Também não serve para
+    procedimentos de estoque, preço ou pedidos, que estão em "Guias 2026".
+kind: KnowledgeSourceConfiguration
+source:
+  kind: FederatedStructuredSearchSource
+  connectionProperties:
+    mode: Invoker
+
+  skillConfiguration: LimpandoseusdadosdeNavegaoCSIHpdf_cefSxM1e_tJZJq9LMBzay
